@@ -1,0 +1,38 @@
+// chatbot.js
+
+let chatBody = document.querySelector('.chat-body');
+let chatInput = document.getElementById('chatInput');
+let sendBtn = document.getElementById('sendBtn');
+
+sendBtn.addEventListener('click', sendMessage);
+
+function sendMessage() {
+    let userMessage = chatInput.value.trim();
+    if (userMessage !== '') {
+        appendMessage('user', userMessage);
+        chatInput.value = '';
+        getBotResponse(userMessage);
+    }
+}
+
+function appendMessage(sender, message) {
+    let messageDiv = document.createElement('div');
+    messageDiv.classList.add(sender === 'user' ? 'user-message' : 'bot-message');
+    messageDiv.innerText = message;
+    chatBody.appendChild(messageDiv);
+    chatBody.scrollTop = chatBody.scrollHeight;
+}
+
+function getBotResponse(input) {
+    let response;
+    if (input.toLowerCase().includes('price')) {
+        response = 'The AuraX SmartGlass starts at $1499.';
+    } else if (input.toLowerCase().includes('features')) {
+        response = 'AuraX includes AR, AI gesture control, voice assistant, and multi-device sync.';
+    } else if (input.toLowerCase().includes('pre-order')) {
+        response = 'Pre-orders are now available on our website.';
+    } else {
+        response = 'I am here to assist you. Ask me anything about AuraX SmartGlass.';
+    }
+    setTimeout(() => appendMessage('bot', response), 1000);
+}

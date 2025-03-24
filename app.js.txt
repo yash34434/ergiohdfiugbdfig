@@ -1,0 +1,46 @@
+// app.js
+
+// 360° Product Demo
+let canvas = document.getElementById('productCanvas');
+let ctx = canvas.getContext('2d');
+let currentAngle = 0;
+
+function drawProduct(angle) {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    let img = new Image();
+    img.src = `images/glass${angle % 360}.png`;
+    img.onload = function() {
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+    };
+}
+
+window.addEventListener('scroll', () => {
+    let scrollPosition = window.scrollY;
+    currentAngle = Math.floor(scrollPosition / 5);
+    drawProduct(currentAngle);
+});
+
+// Color Customization
+let colorButtons = document.querySelectorAll('.color-btn');
+colorButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+        let color = e.target.dataset.color;
+        canvas.style.filter = `hue-rotate(${getColorHue(color)}deg)`;
+    });
+});
+
+function getColorHue(color) {
+    switch (color) {
+        case 'black': return 0;
+        case 'silver': return 180;
+        case 'gold': return 45;
+        default: return 0;
+    }
+}
+
+// Chatbot Toggle
+let chatIcon = document.getElementById('chatToggle');
+let chatbot = document.getElementById('chatbot');
+chatIcon.addEventListener('click', () => {
+    chatbot.style.display = chatbot.style.display === 'none' ? 'block' : 'none';
+});

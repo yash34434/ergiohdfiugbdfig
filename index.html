@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuraX SmartGlass - Experience Reality Redefined</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>AuraX SmartGlass</h1>
+            <p>Experience Reality. Redefined.</p>
+            <div class="cta-buttons">
+                <a href="#features" class="btn">Learn More</a>
+                <a href="#demo" class="btn">Watch Demo</a>
+                <a href="#preorder" class="btn btn-preorder">Pre-Order</a>
+            </div>
+        </div>
+        <img src="images/smartglass.png" alt="AuraX SmartGlass" class="hero-image">
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <h2>Key Features</h2>
+        <div class="feature-grid">
+            <div class="feature">
+                <h3>Immersive 360° AR</h3>
+                <p>Experience augmented reality like never before.</p>
+            </div>
+            <div class="feature">
+                <h3>AI Gesture Control</h3>
+                <p>Control your world with intuitive gestures.</p>
+            </div>
+            <div class="feature">
+                <h3>Voice-Controlled Assistant</h3>
+                <p>Get real-time assistance anytime.</p>
+            </div>
+            <div class="feature">
+                <h3>Multi-Device Sync</h3>
+                <p>Seamlessly connects with all your devices.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Demo Section -->
+    <section id="demo" class="demo">
+        <h2>Explore AuraX in 360°</h2>
+        <div class="product-demo">
+            <canvas id="productCanvas"></canvas>
+        </div>
+        <div class="color-options">
+            <button class="color-btn" data-color="black"></button>
+            <button class="color-btn" data-color="silver"></button>
+            <button class="color-btn" data-color="gold"></button>
+        </div>
+    </section>
+
+    <!-- AI Chatbot -->
+    <div id="chatbot" class="chatbot">
+        <div class="chat-header">AI Assistant</div>
+        <div class="chat-body"></div>
+        <input type="text" id="chatInput" placeholder="Ask me anything...">
+        <button id="sendBtn">Send</button>
+    </div>
+    <button id="chatToggle" class="chat-icon">💬</button>
+
+    <script src="app.js"></script>
+    <script src="chatbot.js"></script>
+</body>
+</html>

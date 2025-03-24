@@ -1,0 +1,170 @@
+/* styles.css */
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5% 10%;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+}
+
+.hero-content {
+  max-width: 500px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.cta-buttons a {
+  margin-right: 10px;
+  padding: 12px 24px;
+  background: #ff105f;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.cta-buttons a:hover {
+  background: #ff5722;
+  box-shadow: 0 0 12px rgba(255, 105, 180, 0.8);
+}
+
+.hero-image {
+  width: 450px;
+  animation: float 3s infinite ease-in-out;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Features Section */
+.features {
+  padding: 5% 10%;
+  text-align: center;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.feature {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.feature:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
+}
+
+/* Demo Section */
+.demo {
+  text-align: center;
+  padding: 5% 10%;
+}
+
+#productCanvas {
+  width: 100%;
+  height: 500px;
+  background-color: #1e1e1e;
+  border-radius: 12px;
+}
+
+.color-options {
+  margin-top: 20px;
+}
+
+.color-btn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.color-btn:hover {
+  transform: scale(1.2);
+}
+
+/* Chatbot */
+.chatbot {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 320px;
+  background: #1e1e1e;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  display: none;
+}
+
+.chat-header {
+  background: #0072ff;
+  padding: 12px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.chat-body {
+  height: 300px;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+#chatInput {
+  width: 80%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+}
+
+#sendBtn {
+  width: 18%;
+  padding: 10px;
+  background: #ff105f;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+}
+
+.chat-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #ff105f;
+  color: #fff;
+  padding: 12px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
